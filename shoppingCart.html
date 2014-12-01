@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="description" content="A simple way to buy apples and oranges online" />
+    <meta name="author" content="Cynthia O'Donnell" />
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <script src='js/jQuery.js'></script>
+    <!--Google font for my title, footer and standard text-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Montez' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='css/style.css' type='text/css'></link>
+    <link rel='shortcut icon' href='images/favicon.ico'/>
+    <title>Javascript Shopping Cart - Cynthia O'Donnell</title>
+  </head>
+  <body>
+<!--HEADER-->
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-9'>
+          <header class='text-left'>
+            <h1 id='name' class='analgous-color'>Fruit Shop</h1>
+          </header>
+        </div>
+        <div class='col-offset-2 col-md-1'>
+          <img id='specials' src='images/specialoffer.png' alt='special offers'>
+        </div>
+      </div>
+    </div>
+<!--Home view-->
+    <div class='container main'>
+      <div class='row'>
+        <div class='col-md-12' id='c'>
+          <div class="intro row">
+            <div class="col-md-4">
+              <h2 class="welcome">We sell apples and oranges!<h2>  
+              <h3>Click on an apple or an orange to add it to your cart.</h3>
+              <p><button type='button' class='btn img-rounded checkout'>Checkout</button></p>
+            </div>
+            <div class="col-md-offset-1 col-md-7 fruit">
+              <div class='row'>
+                <div class='col-md-6 apple'>
+                  <div class="row">
+                    <div class='col-md-10'>
+                      <img id='appleImg' src='images/apple.png' alt='a delicious apple'>
+                      <p id="applePrice" class='text-center'>Only $0.60 each!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class= 'col-md-6 orange'>
+                  <div class='row'>
+                    <div class='col-md-offset-1 col-md-10'>
+                      <img id='OrangeImg' src='images/orange.png' alt='a delicious orange'>
+                        <p id="orangePrice" class='text-center'>Only $0.25 each!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--FOOTER-->
+    <div class='container'>
+      <footer class='row text-center'>
+        <div class='col-md-12 text-center'>
+          
+          <p>Made with <span id='javascript'>JavaScript</span>.  Code available at <span><a target='_blank' href='https://github.com/MimiBambino/InteractiveResume'><img class='github' src='images/GitHub.png' alt='GitHub'></a></span>
+          </p>
+          <p>&copy; Cynthia O'Donnell 2014</p>
+        </div>
+      </footer>
+    </div>
+    <script src='js/main.js'></script>
+  </body>
+</html>

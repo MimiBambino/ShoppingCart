@@ -1,0 +1,102 @@
+body {
+    text-align: center;
+}
+
+/* General styling */
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.7em;
+    font-weight: 300;
+    color: #747784;
+}
+
+.main {
+    margin-bottom: 90px;
+}
+
+#name {
+    font-family: 'Montez', cursive;
+    display: block;
+    font-size: 6em;
+    font-weight: 300;
+    margin-left: 5%;
+}
+
+.container {
+    padding: 0 30px;
+}
+
+.primary-color {
+    color: #03bbc5;
+}
+
+.contrasting-1-color {
+    color: #002b2e;
+}
+
+.analgous-color {
+    color: #008cb0;
+}
+
+/* Header */
+
+header {
+    color: #002b2e;
+    margin-top: 40px;
+    margin-bottom: 90px;
+}
+
+header .row {
+    margin-left: 0;
+}
+
+#specials {
+    margin-right: -50px;
+}
+
+#orangePrice {
+    margin-top: 3px;
+    margin-left: 50px;
+}
+
+h3{
+    font-weight: 300;
+}
+
+/* Footer */
+
+footer {
+    padding-top: 0px;
+    color: black;
+    clear: both;
+}
+
+#javascript {
+    font-family: 'Montez', 'Brush Script MT', 'Papyrus', cursive;
+    color: #008cb0 ;
+    font-size: 1.6em;
+}
+
+.github {
+    height: auto;
+    width: auto;
+    max-width: 20px;
+    max-height: 20px;"
+}
+
+button {
+    color: white;
+    background-color: #03bbc5;
+    border: #03bbc5;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #29E1EB;
+    color: white;
+}
+
+.btn:focus {
+    outline: none;
+}
