@@ -3,15 +3,19 @@
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta name="description" content="A simple way to buy apples and oranges online" />
-    <meta name="author" content="Cynthia O'Donnell" />
+    <meta name='description' content='A simple way to buy apples and oranges online'/>
+    <meta name='author' content="Cynthia O'Donnell"/>
     <link rel='stylesheet' href='css/bootstrap.min.css'>
     <script src='js/jQuery.js'></script>
     <!--Google font for my title, footer and standard text-->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Lobster' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='css/style.css' type='text/css'></link>
-    <link rel='shortcut icon' href='images/favicon.ico'/>
     <title>Javascript Shopping Cart - Cynthia O'Donnell</title>
+<!-- Jasmine links -->
+    <link rel='stylesheet' href='jasmine/lib/jasmine-2.1.2/jasmine.css'>
+    <script src='jasmine/lib/jasmine-2.1.2/jasmine.js'></script>
+    <script src='jasmine/lib/jasmine-2.1.2/jasmine-html.js'></script>
+    <script src='jasmine/lib/jasmine-2.1.2/boot.js'></script>
   </head>
   <body>
 <!--HEADER-->
@@ -29,18 +33,17 @@
       </div>
     </div>
 <!-- Modal view-->
-<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
+<div class='modal fade' id='checkoutModal' tabindex='-1' role='dialog' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button>
+        <h3 class='modal-title' id='myModalLabel'>Shopping Cart</h3>
       </div>
-      <div class="modal-body">
-        
+      <div class='modal-body'>
       </div>
-      <div class="modal-footer">
-        <button type="button" id="completePurchase" class="btn btn-default" data-dismiss="modal">Complete Purchase</button>
+      <div class='modal-footer'>
+        <button type='button' id='completePurchase' class='btn btn-default' data-dismiss='modal'>Complete Purchase</button>
       </div>
     </div>
   </div>
@@ -49,24 +52,24 @@
     <div class='container main'>
       <div class='row'>
         <div class='col-md-12' id='c'>
-          <div class="intro row">
-            <div class="col-md-4">
-              <h2 class="welcome">We sell apples and oranges!<h2>  
+          <div class='intro row'>
+            <div class='col-md-4'>
+              <h2 class='welcome'>We sell apples and oranges!<h2>  
               <h3>Click on an apple or an orange to add it to your cart.</h3>
               <p><button type='button' id='checkout' class='btn img-rounded' style='font-size:20px' data-toggle='modal' data-target='#checkoutModal'>Checkout</button></p>
             </div>
-            <div class="col-md-offset-1 col-md-7 fruit">
+            <div class='col-md-offset-1 col-md-7 fruit'>
               <div id='fruitRow' class='row'>
                 <div class='col-md-6 apple'>
-                  <div class="row">
+                  <div class='row'>
                     <div class='col-md-10'>
                       <div class='row'>
                         <div class='col-md-offset-1 col-md-10 text-center'>
                           <p id='appleAdded'>Apple added to cart!</p>
                         </div>
                       </div>
-                      <img id='appleImg' src='images/apple.png' alt='a delicious apple' data-target=".bs-example-modal-sm">
-                      <p id="applePrice" class='text-center'>Only $0.60 each!</p>
+                      <img id='appleImg' src='images/apple.png' alt='a delicious apple' data-target='.bs-example-modal-sm'>
+                      <p id='applePrice' class='text-center'>Only $0.60 each!</p>
                     </div>
                   </div>
                 </div>
@@ -79,7 +82,7 @@
                         </div>
                       </div>
                       <img id='orangeImg' src='images/orange.png' alt='a delicious orange'>
-                        <p id="orangePrice" class='text-center'>Only $0.25 each!</p>
+                        <p id='orangePrice' class='text-center'>Only $0.25 each!</p>
                     </div>
                   </div>
                 </div>
@@ -101,5 +104,6 @@
     </div>
     <script src='js/bootstrap.min.js'></script>
     <script src='js/main.js'></script>
+    <script src='jasmine/spec/shoppingCart.js'></script>
   </body>
 </html>

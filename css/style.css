@@ -70,6 +70,10 @@ header .row {
 #offerText {
     margin-left: 80px;
 }
+#specialOfferHTML {
+    margin-top: 60px;
+}
+
 #selection {
     margin-top: 80px;
 }

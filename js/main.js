@@ -4,6 +4,8 @@ var shoppingCart = {
     "oranges": 0,
     "specialOfferOne": false,
     "specialOfferTwo": false,
+    "applesCost": 0,
+    "orangesCost": 0,
 
     /* When an apple is clicked the event handler at the bottom of this script 
     calls the addApple() function.
@@ -14,7 +16,7 @@ var shoppingCart = {
         $("#appleAdded").css('visibility', 'visible');
         setTimeout(function(){
             $("#appleAdded").css('visibility', 'hidden');
-        }, 1000);
+        }, 800);
     },
     /* Same implementation as addApple() */
     addOrange: function(){
@@ -22,7 +24,7 @@ var shoppingCart = {
         $("#orangeAdded").css('visibility', 'visible');
         setTimeout(function(){
             $("#orangeAdded").css('visibility', 'hidden');
-        }, 1000);
+        }, 800);
     },
     /* When the Special Offers tag is clicked it is replaced by buttons explaining the offers */
     selectSpecialOffer: function(){
@@ -42,17 +44,17 @@ var shoppingCart = {
     checkOut: function(){
         // Determines if a Special Offer has been selected and calculates the total accordingly
         if (shoppingCart.specialOfferOne){
-            var totalApples = (shoppingCart.apples / 2) * 60;
-            var totalOranges = shoppingCart.oranges * 25;
-            var totalCost = totalApples + totalOranges;
+            shoppingCart.applesCost = (shoppingCart.apples / 2) * 60;
+            shoppingCart.orangesCost = shoppingCart.oranges * 25;
+            var totalCost = shoppingCart.applesCost + shoppingCart.orangesCost;
         } else if (shoppingCart.specialOfferTwo){
-            var totalApples = shoppingCart.apples * 60;
-            var totalOranges = ((shoppingCart.oranges / 3) * 2) * 25;
-            var totalCost = totalApples + totalOranges;
+            shoppingCart.applesCost = shoppingCart.apples * 60;
+            shoppingCart.orangesCost = ((shoppingCart.oranges / 3) * 2) * 25;
+            var totalCost = shoppingCart.applesCost + shoppingCart.orangesCost;
         } else {
-            var totalApples = shoppingCart.apples * 60;
-            var totalOranges = shoppingCart.oranges * 25;
-            var totalCost = totalApples + totalOranges;
+            shoppingCart.applesCost = shoppingCart.apples * 60;
+            shoppingCart.orangesCost = shoppingCart.oranges * 25;
+            var totalCost = shoppingCart.applesCost + shoppingCart.orangesCost;
         }
         // Format the amount calculated
         totalCost /= 100;
@@ -60,6 +62,7 @@ var shoppingCart = {
         formattedCost = formattedCost.substring(0, 5);
 
         // Display correct amount in the browser
+        $('.modal-body').empty();
         var modalHTML = "<p>You ordered <span class='quantity'>%numApples%</span> Apples and <span class='quantity'>%numOranges%</span> Oranges.</p><p>The amount due is <span class='amountDue'>%amt%</span>.</p>";
         var formattedModalHTML = modalHTML.replace('%numApples%', shoppingCart.apples).replace('%numOranges%', shoppingCart.oranges).replace('%amt%', formattedCost);
         $('.modal-body').append(formattedModalHTML);
@@ -67,8 +70,14 @@ var shoppingCart = {
     clearCart: function(){
         shoppingCart.apples = 0;
         shoppingCart.oranges = 0;
+        shoppingCart.specialOfferOne = false,
+        shoppingCart.specialOfferTwo = false,
+        shoppingCart.applesCost = 0;
+        shoppingCart.orangesCost = 0;
         $('.modal-body').empty();
-        $('#selection').replaceWith("<div id='specials' class='col-offset-5 col-md-1'><img id='tag' src='images/specialoffer.png' alt='special offers'></div>");
+        var specials = "<div id='specials' class='col-offset-5 col-md-1'><img id='tag' src='images/specialoffer.png' alt='special offers'></div>";
+        $('#selection').replaceWith(specials);
+        $('#specialOfferHTML').replaceWith(specials);
     }
 };
 // Event listeners for all shoppingCart functions.
@@ -79,5 +88,7 @@ $(document).ready(function(){
     $('#specials').on('click', shoppingCart.selectSpecialOffer);
     $('.modal').on('click', shoppingCart.clearCart);
 });
+
+
 
 
