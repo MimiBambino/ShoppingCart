@@ -29,6 +29,7 @@ shoppingCart.prototype.checkOut = function(){
     }
 };
 
+
 $('#appleImg').on('click', shoppingCart.addApple);
 $('#orangeImg').on('click', shoppingCart.addOrange);
 $('.checkout').on('click', shoppingCart.checkOut);
