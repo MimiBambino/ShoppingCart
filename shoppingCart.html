@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='css/bootstrap.min.css'>
     <script src='js/jQuery.js'></script>
     <!--Google font for my title, footer and standard text-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Montez' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Lobster' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='css/style.css' type='text/css'></link>
     <link rel='shortcut icon' href='images/favicon.ico'/>
     <title>Javascript Shopping Cart - Cynthia O'Donnell</title>
@@ -17,31 +17,34 @@
 <!--HEADER-->
     <div class='container'>
       <div class='row'>
-        <div class='col-md-9'>
+        <div class='col-md-6'>
           <header class='text-left'>
-            <h1 id='name' class='analgous-color'>Fruit Shop</h1>
+            <h1 id='title' class='green'>Fruit Shop</h1>
           </header>
         </div>
-        <div class='col-offset-2 col-md-1'>
-          <img id='specials' src='images/specialoffer.png' alt='special offers'>
+        <div id='specials' class='col-offset-5 col-md-1'>
+          <img id='tag' src='images/specialoffer.png' alt='special offers'>
         </div>
+
       </div>
     </div>
 <!-- Modal view-->
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-         Apple added to cart.
-        </div>
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="completePurchase" class="btn btn-default" data-dismiss="modal">Complete Purchase</button>
       </div>
     </div>
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-         Orange added to cart.
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 <!-- Home view -->
     <div class='container main'>
       <div class='row'>
@@ -50,13 +53,18 @@
             <div class="col-md-4">
               <h2 class="welcome">We sell apples and oranges!<h2>  
               <h3>Click on an apple or an orange to add it to your cart.</h3>
-              <p><button type='button' class='btn img-rounded checkout'>Checkout</button></p>
+              <p><button type='button' id='checkout' class='btn img-rounded' style='font-size:20px' data-toggle='modal' data-target='#checkoutModal'>Checkout</button></p>
             </div>
             <div class="col-md-offset-1 col-md-7 fruit">
-              <div class='row'>
+              <div id='fruitRow' class='row'>
                 <div class='col-md-6 apple'>
                   <div class="row">
                     <div class='col-md-10'>
+                      <div class='row'>
+                        <div class='col-md-offset-1 col-md-10 text-center'>
+                          <p id='appleAdded'>Apple added to cart!</p>
+                        </div>
+                      </div>
                       <img id='appleImg' src='images/apple.png' alt='a delicious apple' data-target=".bs-example-modal-sm">
                       <p id="applePrice" class='text-center'>Only $0.60 each!</p>
                     </div>
@@ -65,7 +73,12 @@
                 <div class= 'col-md-6 orange'>
                   <div class='row'>
                     <div class='col-md-offset-1 col-md-10'>
-                      <img id='OrangeImg' src='images/orange.png' alt='a delicious orange'>
+                      <div class='row'>
+                        <div class='col-md-offset-3 col-md-9 text-center'>
+                          <p id='orangeAdded'>Orange added to cart!</p>
+                        </div>
+                      </div>
+                      <img id='orangeImg' src='images/orange.png' alt='a delicious orange'>
                         <p id="orangePrice" class='text-center'>Only $0.25 each!</p>
                     </div>
                   </div>
